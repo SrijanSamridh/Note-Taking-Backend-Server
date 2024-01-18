@@ -27,7 +27,7 @@ authRouter.post("/signup", async (req, res) => {
     // Save the user to the database
     await newUser.save();
 
-    res.json({ message: "User registered successfully", token: newUser});
+    res.json({ message: "User registered successfully", body: newUser});
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: `Internal Server Error: ${error}` });
